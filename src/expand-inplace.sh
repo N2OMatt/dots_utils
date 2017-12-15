@@ -6,9 +6,9 @@
 ##                 | | | |/ __/ (_) | | | | | | (_| | |_| |_                  ##
 ##                 |_| |_|_____\___/|_| |_| |_|\__,_|\__|\__|                 ##
 ##                              www.n2omatt.com                               ##
-##  File      : useraddex.sh                                                  ##
-##  Project   : dots                                                          ##
-##  Date      : Oct 14, 2017                                                  ##
+##  File      : expand-inplace.sh                                             ##
+##  Project   : dots_utils                                                    ##
+##  Date      : Dec 15, 2017                                                  ##
 ##  License   : GPLv3                                                         ##
 ##  Author    : n2omatt <n2omatt@amazingcow.com>                              ##
 ##  Copyright : n2omatt - 2017                                                ##

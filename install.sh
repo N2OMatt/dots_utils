@@ -21,5 +21,8 @@
 ## Script                                                                     ##
 ##----------------------------------------------------------------------------##
 for FILENAME in $(ls ./src); do
-    cp -fv ./src/$FILENAME /usr/local/bin;
+    CLEAN_FILENAME=$(basename $FILENAME ".sh");
+
+    cp -fv ./src/$FILENAME /usr/local/bin/$CLEAN_FILENAME;
+    chmod 755 /usr/local/bin/$CLEAN_FILENAME;
 done;

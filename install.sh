@@ -17,9 +17,16 @@
 ##    Just copy everything under ./src to /usr/local/bin                      ##
 ##---------------------------------------------------------------------------~##
 
+## Stop om errors...
+set -e;
+
 ##----------------------------------------------------------------------------##
 ## Script                                                                     ##
 ##----------------------------------------------------------------------------##
+## Make the target directory if needed.
+mkdir -p /usr/local/bin
+
+## Install each script found on ./src
 for FILENAME in $(ls ./src); do
     CLEAN_FILENAME=$(basename $FILENAME ".sh");
 

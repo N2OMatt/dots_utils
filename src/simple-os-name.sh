@@ -40,13 +40,15 @@ OS_INFO="";
 ## Functions                                                                  ##
 ##----------------------------------------------------------------------------##
 discover_everything()
-{
+{    
     case $(uname -s | tr [:upper:] [:lower:] ) in
+        ##----------------------------------------------------------------------
         ## For our purposes the Cygwin, MinGW and Msys are treated as distros.
         *msys*   ) OS_TYPE="msys";   OS_KERNEL="microsoft"; OS_DISTRO="msys"   ;;
         *mingw*  ) OS_TYPE="mingw";  OS_KERNEL="microsoft"; OS_DISTRO="mingw"  ;;
         *cygwin* ) OS_TYPE="cygwin"; OS_KERNEL="microsoft"; OS_DISTRO="cygwin" ;;
 
+        ##----------------------------------------------------------------------
         ## GNU/Linux.
         *linux* )
             OS_TYPE="gnu_linux";
@@ -61,13 +63,23 @@ discover_everything()
         ;;
 
         ## Other Unices.
+	##----------------------------------------------------------------------
+        ## BSDs
+        *minix* ) OS_TYPE="minix"; OS_KERNEL="minix"; OS_DISTRO="minix"; ;;
+
         ## COWTODO(n2omatt): Implement...
-        # *minix* ) OS_TYPE="minix"; OS_KERNEL="minix"; OS_DISTRO="minix"; ;;
         # *darwin*) OS_TYPE="osx";   OS_KERNEL="darvin" OS_DISTRO="NOT_IMPLEMENTED_YET"; ;;
-        # *bsd*   ) OS_TYPE="bsd";   ;;
+
+        ##----------------------------------------------------------------------
+        ## BSDs
+        ##   Today I'm assuming that all BSDs are just FreeBSD.
+        ##   This isn't the perfect situation but I just have only on machine 
+        ##   with the TrueOS installed and the uname(1) output doesn't seems 
+        ##   too much helpful.
+        *bsd* ) OS_TYPE="bsd"; OS_KERNEL="bsd" OS_DISTRO="bsd";  ;;
     esac;
 }
-
+	
 
 show_help()
 {
